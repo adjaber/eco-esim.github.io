@@ -152,9 +152,10 @@
         <p><a href="mailto:support@esimvoyage.com">Contactez-nous</a></p>
     </footer>
 
-    <!-- Script d'intégration Typebot -->
+    <!-- Intégration du script Typebot -->
     <script src="https://cdn.typebot.io/bundle.js"></script>
     <script>
+        // Initialise le chatbot Typebot avec les paramètres
         const bot = new Typebot.Bubble({
             typebot: "ecoesim-ai-chat",
             apiHost: "https://typebot.io",
@@ -164,7 +165,9 @@
                 avatarUrl:
                     "https://media0.giphy.com/media/dzBLyjVBCtWgGPiXCJ/giphy-downsized.gif?cid=fe3852a3fbosw7q8hxkk92to3z05mkvobkpohmh86uo3nf8v&ep=v1_gifs_search&rid=giphy-downsized.gif&ct=g",
             },
-            theme: { button: { backgroundColor: "#ff7f50" } },
+            theme: {
+                button: { backgroundColor: "#1D1D1D" }
+            }
         });
 
         bot.init();
