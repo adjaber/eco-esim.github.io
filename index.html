@@ -4,47 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eSIM Voyage - Connectez-vous partout dans le monde</title>
+    <title>eSIM Voyage - Connectez-vous facilement avec eSIM</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background-color: #f2f2f2;
         }
 
         header {
-            background-color: #004b8d;
+            background-color: #00b4d8;
             color: white;
-            padding: 20px 0;
+            padding: 30px 20px;
             text-align: center;
+            border-bottom: 4px solid #00c7e0;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 3em;
+        }
+
+        header p {
+            font-size: 1.2em;
+            font-weight: 400;
+            margin-top: 10px;
         }
 
         section {
-            padding: 40px 20px;
+            padding: 60px 20px;
             text-align: center;
         }
 
         h2 {
-            font-size: 2em;
+            font-size: 2.5em;
             color: #004b8d;
+            margin-bottom: 20px;
         }
 
         p {
             font-size: 1.2em;
-            color: #555;
+            color: #333;
             margin: 20px 0;
         }
 
         .iframe-container {
             background-color: white;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             width: 100%;
             max-width: 1200px;
@@ -57,32 +65,57 @@
             border: none;
         }
 
+        .cta-button {
+            background-color: #ff7f50;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 30px;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #ff5a36;
+        }
+
+        .payment-info {
+            background-color: #004b8d;
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 10px;
+            display: inline-block;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .payment-info h3 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .payment-info p {
+            font-size: 1.2em;
+        }
+
         footer {
             background-color: #333;
             color: white;
             padding: 20px 0;
             text-align: center;
-        }
-
-        footer p {
-            margin: 0;
             font-size: 1em;
         }
 
-        .cta-button {
-            background-color: #004b8d;
-            color: white;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            border: none;
-            border-radius: 5px;
+        footer a {
+            color: #ff7f50;
             text-decoration: none;
-            margin-top: 20px;
-            display: inline-block;
         }
 
-        .cta-button:hover {
-            background-color: #003366;
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -91,12 +124,12 @@
 
     <header>
         <h1>Bienvenue sur eSIM Voyage</h1>
-        <p>Connectez-vous facilement à internet partout dans le monde avec nos solutions eSIM</p>
+        <p>Connectez-vous à Internet partout dans le monde avec l'eSIM</p>
     </header>
 
     <section>
-        <h2>Pourquoi choisir notre eSIM pour vos voyages ?</h2>
-        <p>Plus besoin de changer de carte SIM ! Avec nos eSIM, profitez d'une connexion internet fiable et rapide dans plus de 100 pays. Idéal pour les voyageurs fréquents et les aventuriers du monde entier.</p>
+        <h2>Voyagez facilement avec eSIM</h2>
+        <p>Fini les tracas avec les cartes SIM physiques ! Avec notre eSIM, connectez-vous partout dans le monde sans frontières. Idéal pour les voyageurs, les business trips, et les explorateurs numériques.</p>
         <a href="#cta" class="cta-button">Obtenez votre eSIM maintenant</a>
     </section>
 
@@ -104,12 +137,38 @@
         <iframe src="https://typebot.co/ecoesim-ai-chat"></iframe>
     </section>
 
+    <div class="payment-info">
+        <h3>Nouvelle Option de Paiement en DZD</h3>
+        <p>Nous sommes fiers d'annoncer que vous pouvez désormais acheter votre eSIM en utilisant des cartes bancaires locales en DZD. Profitez de cette facilité de paiement en toute sécurité via :</p>
+        <ul>
+            <li>Cartes CIB (Banque Commerciale et Industrielle)</li>
+            <li>Cartes Dahabia (pour les détenteurs de cartes de la Banque de l'Agriculture et du Développement Rural)</li>
+        </ul>
+        <p>La première plateforme en Algérie à proposer cette option ! Payez facilement en DZD et voyagez sereinement.</p>
+    </div>
+
     <footer>
         <p>&copy; 2025 eSIM Voyage. Tous droits réservés.</p>
-        <p><a href="mailto:support@esimvoyage.com" style="color: white;">Contactez-nous</a></p>
+        <p><a href="mailto:support@esimvoyage.com">Contactez-nous</a></p>
     </footer>
 
+    <!-- Script d'intégration Typebot -->
+    <script src="https://cdn.typebot.io/bundle.js"></script>
+    <script>
+        const bot = new Typebot.Bubble({
+            typebot: "ecoesim-ai-chat",
+            apiHost: "https://typebot.io",
+            previewMessage: {
+                message: "Je suis votre assistant eSIM pour les voyages !",
+                autoShowDelay: 5000,
+                avatarUrl:
+                    "https://media0.giphy.com/media/dzBLyjVBCtWgGPiXCJ/giphy-downsized.gif?cid=fe3852a3fbosw7q8hxkk92to3z05mkvobkpohmh86uo3nf8v&ep=v1_gifs_search&rid=giphy-downsized.gif&ct=g",
+            },
+            theme: { button: { backgroundColor: "#ff7f50" } },
+        });
+
+        bot.init();
+    </script>
 </body>
 
 </html>
-
