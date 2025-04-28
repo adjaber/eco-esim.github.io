@@ -1,72 +1,156 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>eSIM Voyage - Explorez le monde connecté</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
+    :root {
+      --primary: #00b4d8;
+      --accent: #ff6b6b;
+      --dark: #1f1f1f;
+      --light: #f9f9f9;
+      --gradient: linear-gradient(135deg, #00b4d8, #0096c7);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
     }
-    .hero {
-      background: linear-gradient(135deg, #00b4d8, #0096c7);
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
-      background-image: url('https://source.unsplash.com/1600x900/?travel,airplane');
+
+    header {
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80'); /* Belle image de voyage */
       background-size: cover;
       background-position: center;
+      color: white;
+      text-align: center;
+      padding: 150px 20px;
       position: relative;
     }
-    .hero::after {
-      content: "";
+
+    header::after {
+      content: '';
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.5);
-      z-index: 0;
-    }
-    .hero-content {
-      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
       z-index: 1;
     }
-    .btn-primary-custom {
-      background-color: #ff6b6b;
+
+    header h1,
+    header p {
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: 4em;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 1.5em;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2.8em;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #444;
+      margin: 20px auto;
+      max-width: 800px;
+    }
+
+    .cta-button {
+      background: var(--accent);
+      color: white;
+      padding: 15px 35px;
+      font-size: 1.2em;
       border: none;
       border-radius: 50px;
-      padding: 12px 30px;
-      font-size: 1.2em;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      margin-top: 30px;
+      display: inline-block;
     }
+
+    .cta-button:hover {
+      background: #ff4b4b;
+    }
+
     .iframe-container {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      margin-top: 50px;
+      margin: 40px auto;
       border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      overflow: hidden;
+      max-width: 1000px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
-    .iframe-container iframe {
-      position: absolute;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      border:0;
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
     }
-    footer {
-      background: #1f1f1f;
+
+    .payment-info {
+      background: var(--gradient);
       color: white;
-      padding: 30px 20px;
-      text-align: center;
+      padding: 40px;
+      border-radius: 20px;
+      margin-top: 60px;
     }
+
+    .payment-info h3 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .payment-info ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .payment-info ul li {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #1f1f1f;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
     footer a {
-      color: #ff6b6b;
+      color: var(--accent);
       text-decoration: none;
     }
+
     footer a:hover {
       text-decoration: underline;
     }
@@ -75,65 +159,43 @@
 
 <body>
 
-<!-- Hero Section -->
-<section class="hero d-flex align-items-center justify-content-center">
-  <div class="hero-content">
-    <h1 class="display-4 fw-bold">eSIM Voyage</h1>
-    <p class="lead">Explorez le monde sans frontières numériques</p>
-    <a href="#cta" class="btn btn-primary-custom mt-4">Activer mon eSIM</a>
-  </div>
-</section>
+  <header>
+    <h1>eSIM Voyage</h1>
+    <p>Explorez le monde sans frontières numériques</p>
+  </header>
 
-<!-- Présentation -->
-<section class="container text-center my-5">
-  <h2 class="text-primary fw-bold">Votre compagnon de voyage connecté</h2>
-  <p class="mt-3">Finies les files d’attente à l’aéroport pour acheter une SIM ! Notre eSIM vous connecte dès votre arrivée à l’étranger. Simple, rapide et sécurisé – restez connecté, où que vous soyez.</p>
-</section>
+  <section>
+    <h2>Votre compagnon de voyage connecté</h2>
+    <p>Finies les files d’attente à l’aéroport pour acheter une SIM ! Notre eSIM vous connecte dès votre arrivée à l’étranger. Simple, rapide et sécurisé – restez connecté, où que vous soyez.</p>
+    <a href="#cta" class="cta-button">Activer mon eSIM</a>
+  </section>
 
-<!-- Typebot iframe -->
-<section class="container my-5">
-  <div class="iframe-container">
+  <section class="iframe-container">
     <iframe src="https://typebot.co/ecoesim-ai-chat"></iframe>
-  </div>
-</section>
+  </section>
 
-<!-- Paiement Info -->
-<section class="container text-center my-5">
-  <div class="bg-primary text-white rounded-4 p-5">
-    <h3 class="fw-bold mb-4">Paiement local en DZD maintenant disponible !</h3>
+  <div class="payment-info">
+    <h3>Paiement local en DZD maintenant disponible !</h3>
     <p>Profitez de la simplicité du paiement en monnaie locale via :</p>
-    <ul class="list-unstyled">
+    <ul>
       <li>💳 Carte CIB (Banques algériennes)</li>
       <li>💳 Carte Dahabia (Algérie Poste)</li>
     </ul>
-    <p class="mt-3">Une première en Algérie ! Achetez en Dinar, sans frais cachés.</p>
+    <p>Une première en Algérie ! Achetez en Dinar, sans frais cachés.</p>
   </div>
-</section>
 
-<!-- Footer -->
-<footer>
-  <p>&copy; 2025 eSIM Voyage. Tous droits réservés.</p>
-  <p><a href="mailto:support@esimvoyage.com">Contactez notre support</a></p>
-</footer>
+  <footer>
+    <p>&copy; 2025 eSIM Voyage. Tous droits réservés.</p>
+    <p><a href="mailto:support@esimvoyage.com">Contactez notre support</a></p>
+  </footer>
 
-<!-- Typebot Script -->
-<script src="https://cdn.typebot.io/bundle.js"></script>
-<script>
-  const bot = new Typebot.Bubble({
-    typebot: "ecoesim-ai-chat",
-    apiHost: "https://typebot.io",
-    previewMessage: {
-      message: "Besoin d'aide ? Je suis là pour vous guider !",
-      autoShowDelay: 4000,
-      avatarUrl: "https://media0.giphy.com/media/dzBLyjVBCtWgGPiXCJ/giphy-downsized.gif"
-    },
-    theme: {
-      button: { backgroundColor: "#ff6b6b" }
-    }
-  });
+  <!-- Nouveau Script Typebot -->
+  <script type="module">
+    import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js'
 
-  bot.init();
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    Typebot.initPopup({ typebot: "ecoesim-ai-chat" });
+  </script>
+
 </body>
+
 </html>
