@@ -1,18 +1,115 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page avec iframe</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eSIM Voyage - Connectez-vous partout dans le monde</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #004b8d;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #004b8d;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #555;
+            margin: 20px 0;
+        }
+
+        .iframe-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        .cta-button {
+            background-color: #004b8d;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #003366;
+        }
+    </style>
 </head>
+
 <body>
-  <h1>Welcome to esim bot assistant !</h1>
-  
-  <!-- Ajout de l'iframe -->
-  <iframe
-    src="https://typebot.co/ecoesim-ai-chat"
-    style="border: none; width: 100%; height: 600px"
-  ></iframe>
+
+    <header>
+        <h1>Bienvenue sur eSIM Voyage</h1>
+        <p>Connectez-vous facilement à internet partout dans le monde avec nos solutions eSIM</p>
+    </header>
+
+    <section>
+        <h2>Pourquoi choisir notre eSIM pour vos voyages ?</h2>
+        <p>Plus besoin de changer de carte SIM ! Avec nos eSIM, profitez d'une connexion internet fiable et rapide dans plus de 100 pays. Idéal pour les voyageurs fréquents et les aventuriers du monde entier.</p>
+        <a href="#cta" class="cta-button">Obtenez votre eSIM maintenant</a>
+    </section>
+
+    <section class="iframe-container">
+        <iframe src="https://typebot.co/ecoesim-ai-chat"></iframe>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 eSIM Voyage. Tous droits réservés.</p>
+        <p><a href="mailto:support@esimvoyage.com" style="color: white;">Contactez-nous</a></p>
+    </footer>
 
 </body>
+
 </html>
+
