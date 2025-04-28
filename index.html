@@ -28,7 +28,7 @@
     }
 
     header {
-      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80'); /* Belle image de voyage */
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
       background-size: cover;
       background-position: center;
       color: white;
@@ -44,24 +44,41 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.6);
       z-index: 1;
     }
 
-    header h1,
-    header p {
+    .header-content {
       position: relative;
       z-index: 2;
     }
 
-    header h1 {
-      font-size: 4em;
-      font-weight: 800;
-      margin-bottom: 15px;
+    .dynamic-text {
+      font-size: 2em;
+      font-weight: 600;
+      margin-top: 20px;
+      animation: slideText 10s infinite linear;
     }
 
-    header p {
-      font-size: 1.5em;
+    @keyframes slideText {
+      0% { content: "Explorez sans frontières numériques"; }
+      25% { content: "Connecté dès votre arrivée"; }
+      50% { content: "Des forfaits eSIM pour le monde entier"; }
+      75% { content: "Achetez en Dinar Algérien facilement"; }
+      100% { content: "Explorez sans frontières numériques"; }
+    }
+
+    .dynamic-text::after {
+      content: "Explorez sans frontières numériques";
+      animation: changeText 10s infinite;
+    }
+
+    @keyframes changeText {
+      0% { content: "Explorez sans frontières numériques"; }
+      25% { content: "Connecté dès votre arrivée"; }
+      50% { content: "Des forfaits eSIM pour le monde entier"; }
+      75% { content: "Achetez en Dinar Algérien facilement"; }
+      100% { content: "Explorez sans frontières numériques"; }
     }
 
     section {
@@ -115,28 +132,48 @@
       border: none;
     }
 
+    /* Carrousel */
+    .carousel {
+      max-width: 100%;
+      overflow: hidden;
+      margin-top: 40px;
+      position: relative;
+    }
+
+    .carousel-images {
+      display: flex;
+      width: 300%;
+      animation: slide 15s infinite;
+    }
+
+    .carousel-images img {
+      width: 100%;
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0%); }
+      33% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0%); }
+    }
+
+    /* Nouvelle section bas de page */
     .payment-info {
       background: var(--gradient);
       color: white;
       padding: 40px;
       border-radius: 20px;
       margin-top: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .payment-info h3 {
-      font-size: 2em;
-      margin-bottom: 20px;
-    }
-
-    .payment-info ul {
-      list-style: none;
-      padding: 0;
-      margin: 20px 0;
-    }
-
-    .payment-info ul li {
-      font-size: 1.1em;
-      margin-bottom: 10px;
+    .payment-info img {
+      max-width: 250px;
+      margin-top: 20px;
     }
 
     footer {
@@ -144,6 +181,7 @@
       color: white;
       text-align: center;
       padding: 30px 20px;
+      font-size: 0.9em;
     }
 
     footer a {
@@ -160,8 +198,10 @@
 <body>
 
   <header>
-    <h1>eSIM Voyage</h1>
-    <p>Explorez le monde sans frontières numériques</p>
+    <div class="header-content">
+      <h1>eSIM Voyage</h1>
+      <div class="dynamic-text"></div>
+    </div>
   </header>
 
   <section>
@@ -169,6 +209,14 @@
     <p>Finies les files d’attente à l’aéroport pour acheter une SIM ! Notre eSIM vous connecte dès votre arrivée à l’étranger. Simple, rapide et sécurisé – restez connecté, où que vous soyez.</p>
     <a href="#cta" class="cta-button">Activer mon eSIM</a>
   </section>
+
+  <div class="carousel">
+    <div class="carousel-images">
+      <img src="https://source.unsplash.com/1600x600/?paris" alt="Paris">
+      <img src="https://source.unsplash.com/1600x600/?newyork" alt="New York">
+      <img src="https://source.unsplash.com/1600x600/?tokyo" alt="Tokyo">
+    </div>
+  </div>
 
   <section class="iframe-container">
     <iframe src="https://typebot.co/ecoesim-ai-chat"></iframe>
@@ -181,7 +229,7 @@
       <li>💳 Carte CIB (Banques algériennes)</li>
       <li>💳 Carte Dahabia (Algérie Poste)</li>
     </ul>
-    <p>Une première en Algérie ! Achetez en Dinar, sans frais cachés.</p>
+    <img src="Cartes_paiments.png" alt="Cartes de paiement Algérie">
   </div>
 
   <footer>
